@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'users',
     'cow',
 	'home',
+	'predictions',
 ]
 
 SITE_ID = 3

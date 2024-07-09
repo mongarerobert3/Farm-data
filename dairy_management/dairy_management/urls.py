@@ -25,4 +25,5 @@ urlpatterns = [
     path('users/', include('users.urls')),
     path('dairy/', include('dairy.urls')),
     path('home/', include('home.urls')),
+    path('predictions/', include('predictions.urls')),
 ]

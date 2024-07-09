@@ -1,0 +1,17 @@
+# Django related
+*.pyc
+*.pyo
+__pycache__
+
+dairy_management/settings/local.py
+
+DairyManagent/
+
+lib/
+
+media/
+
+static/
+
+.env
+

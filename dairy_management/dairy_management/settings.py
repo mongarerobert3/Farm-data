@@ -29,7 +29,7 @@ DEBUG = True
 
 #ALLOWED_HOSTS = ['farm-data.onrender.com', 'localhost', '127.0.0.1']
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['localhost', 'farm-data.onrender.com']
 
 
 # Application definition

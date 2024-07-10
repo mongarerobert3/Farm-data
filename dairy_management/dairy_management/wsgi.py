@@ -14,3 +14,10 @@ from django.core.wsgi import get_wsgi_application
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dairy_management.settings')
 
 application = get_wsgi_application()
+
+# Run the management command
+from django.core.management import call_command
+try:
+    call_command('setup_initial_data')
+except Exception as e:
+    print(f"Error running setup_initial_data: {e}")

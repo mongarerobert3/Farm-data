@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,12 +22,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-^pdcwb#eb21bf#q4#su$7j99#+1urac4a%t7pc-u#^xm+oe&45'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['localhost', 'https://farm-data.onrender.com']
 
 
 # Application definition
@@ -108,7 +109,7 @@ WSGI_APPLICATION = 'dairy_management.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
+"""DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'dairyfarmdb',
@@ -117,6 +118,13 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '3306', 	
     }
+}"""
+
+
+DATABASES = {
+    'default': dj_database_url.config(
+        default=os.environ.get('RAIL_KEY')
+    )
 }
 
 
@@ -154,7 +162,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'templates')
+
 
 # Additional locations of static files
 STATICFILES_DIRS = [

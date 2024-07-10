@@ -60,12 +60,6 @@
                         <div class="alert alert-{{ message.tags }}">{{ message }}</div>
                     {% endfor %}
                 {% endif %}
-
-                <div>
-                    <a href="{% provider_login_url 'google' %}" class="btn btn-primary btn-sm" style="width: 40%">Login with Google</a>
-                </div>
-                <p>If you have not created an account yet, then please
-                    <a href="{% url 'account_signup' %}">sign up</a> first.</p>
             </section>
 
         </div>

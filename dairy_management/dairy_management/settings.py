@@ -43,11 +43,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
 		
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    'allauth.socialaccount.providers.google',
-		
     'dairy',
     'users',
     'cow',
@@ -55,20 +50,6 @@ INSTALLED_APPS = [
 	'predictions',
 ]
 
-SITE_ID = 3
-
-SOCIALACCOUNT_PROVIDERS = {
-    'google': {
-        'SCOPE': [
-            'profile',
-            'email',
-        ],
-        'AUTH_PARAMS': {
-            'access_type': 'online',
-        },
-        'OAUTH_PKCE_ENABLED': True,
-    }
-}
 
 
 MIDDLEWARE = [
@@ -170,7 +151,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
-    #'allauth.account.auth_backends.AuthenticationBackend',
 )
 
 #EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

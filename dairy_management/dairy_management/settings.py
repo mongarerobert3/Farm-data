@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://farm-data.onrender.com']
+ALLOWED_HOSTS = ['localhost', 'farm-data.onrender.com']
 
 
 # Application definition
@@ -108,17 +108,6 @@ WSGI_APPLICATION = 'dairy_management.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-
-"""DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'dairyfarmdb',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '3306', 	
-    }
-}"""
 
 
 DATABASES = {

@@ -1,5 +1,7 @@
 /*********** By Point of Order *********/
 
+remove the debug = True in prod settings
+
 Work on sale - also the auto sale feature
 
 Edits in all fields 
